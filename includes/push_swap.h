@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/07 22:47:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:41:07 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	ft_atoi(const char *str);
 int ft_strlen(char *str);
 
 void    print_error(char *error);
+int     duplicates_check(int *array, int len);
 
 #endif

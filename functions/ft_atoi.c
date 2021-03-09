@@ -15,7 +15,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int		result;
+	long	result;
 	int		sign;
 	int		i;
 
@@ -26,14 +26,18 @@ int	ft_atoi(const char *str)
 		sign = 1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
+	if (str[i] == '+' || str[i] == '-')
+		print_error("Incorrectly Formatted\n");
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-			print_error("some arguments are not integers\n");
+			print_error("Some Arguments Are Not Integers\n");
 		result = result * 10;
 		result += (int)str[i] - '0';
 		i++;
 	}
+	if (result > 2147483647)
+		print_error("Some Arguments Are Bigger Than An Integer\n");
 	if (sign == 1)
 		return (-result);
 	else

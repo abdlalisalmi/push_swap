@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/07 22:33:01 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:41:48 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int main(int len, char **args)
     stacks.b = malloc(sizeof(int) * (len - 1));
     i = -1;
     while (++i < len - 1)
-    {
         stacks.a[i] = ft_atoi(args[i+1]);
-        printf("%d\n", stacks.a[i]);
-    }
-    
+    if (duplicates_check(stacks.a, len - 1))
+        print_error("There Are Duplicates\n");
     return (0);
 }
