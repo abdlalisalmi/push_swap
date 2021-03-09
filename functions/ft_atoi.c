@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 		result += (int)str[i] - '0';
 		i++;
 	}
-	if (result > 2147483647)
+	if (result > INT32_MAX || result < INT32_MIN)
 		print_error("Some Arguments Are Bigger Than An Integer\n");
 	if (sign == 1)
 		return (-result);
