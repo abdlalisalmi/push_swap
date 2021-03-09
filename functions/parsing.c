@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/09 16:42:38 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/09 19:27:05 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,21 @@ int     duplicates_check(int *array, int len)
             return (1);
     }
     return (0);
+}
+
+char	*delete_new_line_from_input(char const *input)
+{
+	char	*sub;
+	int	i;
+
+	if (!input || !(sub = malloc(sizeof(char) * 5)))
+		return (NULL);
+	i = 0;
+	while (input[i] != '\0' && input[i] != '\n')
+	{
+		sub[i] = input[i];
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
