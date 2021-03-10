@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/09 19:27:05 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:15:16 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,52 @@ char	*delete_new_line_from_input(char const *input)
 	}
 	sub[i] = '\0';
 	return (sub);
+}
+
+void applicate_the_operation(char *instruction)
+{
+    if (ft_strcmp(instruction, "sa"))
+        printf("sa OK\n");
+    else if (ft_strcmp(instruction, "sb"))
+        printf("sb OK\n");
+    else if (ft_strcmp(instruction, "ss"))
+        printf("ss OK\n");
+    else if (ft_strcmp(instruction, "pa"))
+        printf("pa OK\n");
+    else if (ft_strcmp(instruction, "pb"))
+        printf("pb OK\n");
+    else if (ft_strcmp(instruction, "ra"))
+        printf("ra OK\n");
+    else if (ft_strcmp(instruction, "rb"))
+        printf("rb OK\n");
+    else if (ft_strcmp(instruction, "rr"))
+        printf("rr OK\n");
+    else if (ft_strcmp(instruction, "rra"))
+        printf("rra OK\n");
+    else if (ft_strcmp(instruction, "rrb"))
+        printf("rrb OK\n");
+    else if (ft_strcmp(instruction, "rrr"))
+        printf("rrr OK\n");
+    else
+        print_error("This Instruction Does Not Exist\n");
+}
+
+void handle_operations(char *instructions)
+{
+    int i;
+    int j;
+    char operation[4];
+
+    i = -1;
+    j = -1;
+    while (instructions[++i])
+    {
+        operation[++j] = instructions[i];
+        if (instructions[i] == '\n')
+        {
+            operation[j] = '\0';
+            applicate_the_operation(operation);
+            j = -1;
+        }
+    }
 }
