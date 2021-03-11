@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:39:02 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/11 18:04:39 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(int len, char **args)
     len = len - 1;
     a = newStack(len);
     b = newStack(len);
+    printf("%d\n", b->top);
+    printf("%d\n", a->top);
     i = len;
     while (--i >= 0)
         push(a, ft_atoi(args[i+1]));
@@ -32,13 +34,17 @@ int main(int len, char **args)
     if (duplicates_check(a->items, len))
         print_error("There Are Duplicates\n");
     read(0, instructions, 1024);
-    handle_operations(instructions, a, b);
 
+    printf("%d\n", b->top);
+    printf("%d\n", a->top);
+
+    handle_operations(instructions, a, b);
+    
     i = len;
     while (--i >= 0)
-        printf("%d %d\n", a->items[i], b->items[i]);
-    printf("- -\n");
-    printf("a b\n");
+        printf("\n%d %d", a->items[i], b->items[i]);
+    printf("\n- -");
+    printf("\na b\n\n");
     
     return (0);
 }

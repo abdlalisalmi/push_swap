@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/03/11 12:19:49 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/03/11 18:05:06 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,14 @@ SRCS = 	includes/push_swap.h \
 		functions/parsing.c \
 		functions/operations/swap_a.c\
 		functions/operations/swap_b.c\
+		functions/operations/push_a.c\
+		functions/operations/push_b.c\
+		functions/operations/rotate_a.c\
 
 $(NAME) : 	$(SRSC)
 			@ $(CC) $(FLAGS) -c $(SRCS)
 			@ ar rc $(NAME) *.o
-			@ $(CC) $(FLAGS) checker.c $(NAME) -o checker
+			@ $(CC) $(FLAGS) checker.c $(NAME) -o checker -g
 
 all: 	$(NAME)
 
@@ -42,4 +45,4 @@ re: fclean $(NAME)
 test:	re
 	@ rm -rf *.o
 	@ rm -rf $(NAME) includes/push_swap.h.gch
-	echo "sa\nsb" | ./checker 1 2 3 4
+	echo "pa" | ./checker 1 2 3 4 5 6

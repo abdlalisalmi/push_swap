@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:40:00 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:51:47 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,14 @@ void applicate_the_operation(char *operation, t_stack *a, t_stack *b)
         swap_a(b);
     }
     else if (ft_strcmp(operation, "pa"))
-        printf("pa OK\n");
+        push_a(a, b);
     else if (ft_strcmp(operation, "pb"))
-        printf("pb OK\n");
+        push_b(a, b);
     else if (ft_strcmp(operation, "ra"))
-        printf("ra OK\n");
+        rotate_a_b(a);
     else if (ft_strcmp(operation, "rb"))
-        printf("rb OK\n");
+        rotate_a_b(b);
+        
     else if (ft_strcmp(operation, "rr"))
         printf("rr OK\n");
     else if (ft_strcmp(operation, "rra"))

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:18:29 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:36:11 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,8 @@ int peek(t_stack *stack);
 
 void swap_a(t_stack *a);
 void swap_b(t_stack *b);
+void push_a(t_stack *a, t_stack *b);
+void push_b(t_stack *a, t_stack *b);
+void rotate_a_b(t_stack *stack);
 
 #endif
