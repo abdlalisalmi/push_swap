@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:39:03 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 11:50:28 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:12:36 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,5 @@ int pop(t_stack *stack)
         stack->top--;
         return (item);
     }
-    return (-1);
-}
-
-int peek(t_stack *stack)
-{
-    if (!is_empty(stack))
-        return stack->items[stack->top];
     return (-1);
 }

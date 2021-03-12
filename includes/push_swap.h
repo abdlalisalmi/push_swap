@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 17:02:43 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:12:55 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int is_empty(t_stack *stack);
 int is_full(t_stack *stack);
 void push(t_stack *stack, int item);
 int pop(t_stack *stack);
-int peek(t_stack *stack);
 
 void swap_stack(t_stack *stack);
 void push_stack(t_stack *stack1, t_stack *stack2);

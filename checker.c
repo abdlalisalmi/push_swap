@@ -6,11 +6,17 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 16:47:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:25:47 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+void free_stack(t_stack *stack)
+{
+    free(stack->items);
+    free(stack);
+}
 
 int main(int len, char **args)
 {
@@ -44,6 +50,9 @@ int main(int len, char **args)
     while (++i <= b->top)
         printf("%d ", b->items[i]);
     printf("\n\n");
+
+    // free_stack(a);
+    // free_stack(b);
     
     return (0);
 }
