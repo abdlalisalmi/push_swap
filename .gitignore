@@ -4,3 +4,4 @@ checker
 push_swap
 *.o
 includes/push_swap.h.gch
+checker.dSYM
