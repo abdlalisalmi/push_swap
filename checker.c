@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 19:30:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 21:27:41 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int is_sorted(t_stack *a, t_stack *b)
 {
     int i;
 
-    i = -1;
     if (!is_empty(b))
         return (0);
-    while (++i <= a->top)
+    i = -1;
+    while (++i <= a->top - 1)
     {
         if (a->items[i] < a->items[i + 1])
             return (0);
@@ -65,7 +65,7 @@ int main(int len, char **args)
     while (++i <= b->top)
         printf("%d ", b->items[i]);
     printf("\n\n");
-
+    /// end print stacks ///////
 
     if (is_sorted(a, b))
         write(1, "OK\n", 3);
