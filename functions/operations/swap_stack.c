@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 14:12:27 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 17:36:16 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/11 12:03:55 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/12 16:57:33 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void push_a(t_stack *a, t_stack *b)
+void swap_stack(t_stack *stack)
 {
-    if (!is_empty(b))
-        push(a, pop(b));
-    return;
+    int elem1;
+    int elem2;
+
+    if (!is_empty(stack) || stack->top == 1)
+    {
+        elem1 = pop(stack);
+        elem2 = pop(stack);
+        push(stack, elem1);
+        push(stack, elem2);
+    }
 }

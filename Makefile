@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/03/11 18:05:06 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/03/12 17:01:12 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,16 +20,15 @@ SRCS = 	includes/push_swap.h \
 		functions/ft_memset.c \
 		functions/stack.c\
 		functions/parsing.c \
-		functions/operations/swap_a.c\
-		functions/operations/swap_b.c\
-		functions/operations/push_a.c\
-		functions/operations/push_b.c\
-		functions/operations/rotate_a.c\
+		functions/operations/swap_stack.c\
+		functions/operations/push_stack.c\
+		functions/operations/rotate_stack.c\
+		functions/operations/reverse_rotate_stack.c\
 
 $(NAME) : 	$(SRSC)
 			@ $(CC) $(FLAGS) -c $(SRCS)
 			@ ar rc $(NAME) *.o
-			@ $(CC) $(FLAGS) checker.c $(NAME) -o checker -g
+			@ $(CC) $(FLAGS) checker.c $(NAME) -o checker
 
 all: 	$(NAME)
 
@@ -45,4 +44,4 @@ re: fclean $(NAME)
 test:	re
 	@ rm -rf *.o
 	@ rm -rf $(NAME) includes/push_swap.h.gch
-	echo "pa" | ./checker 1 2 3 4 5 6
+	echo "sa\npb\npb\npb\nra\nrb\nrrr\nsa\npa\npa\npa" | ./checker 2 1 3 6 5 8

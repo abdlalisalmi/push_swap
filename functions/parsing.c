@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 17:51:47 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:01:40 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,51 +41,41 @@ int     duplicates_check(int *array, int len)
     return (0);
 }
 
-// char	*delete_new_line_from_input(char const *input)
-// {
-// 	char	*sub;
-// 	int	i;
-
-// 	if (!input || !(sub = malloc(sizeof(char) * 5)))
-// 		return (NULL);
-// 	i = 0;
-// 	while (input[i] != '\0' && input[i] != '\n')
-// 	{
-// 		sub[i] = input[i];
-// 		i++;
-// 	}
-// 	sub[i] = '\0';
-// 	return (sub);
-// }
 
 void applicate_the_operation(char *operation, t_stack *a, t_stack *b)
 {
     if (ft_strcmp(operation, "sa"))
-        swap_a(a);
+        swap_stack(a);
     else if (ft_strcmp(operation, "sb"))
-        swap_a(b);
+        swap_stack(b);
     else if (ft_strcmp(operation, "ss"))
     {
-        swap_a(a);
-        swap_a(b);
+        swap_stack(a);
+        swap_stack(b);
     }
     else if (ft_strcmp(operation, "pa"))
-        push_a(a, b);
+        push_stack(a, b);
     else if (ft_strcmp(operation, "pb"))
-        push_b(a, b);
+        push_stack(b, a);
     else if (ft_strcmp(operation, "ra"))
-        rotate_a_b(a);
+        rotate_stack(a);
     else if (ft_strcmp(operation, "rb"))
-        rotate_a_b(b);
+        rotate_stack(b);
         
     else if (ft_strcmp(operation, "rr"))
-        printf("rr OK\n");
+    {
+        rotate_stack(a);
+        rotate_stack(b);
+    }
     else if (ft_strcmp(operation, "rra"))
-        printf("rra OK\n");
+        reverse_rotate_stack(a);
     else if (ft_strcmp(operation, "rrb"))
-        printf("rrb OK\n");
+        reverse_rotate_stack(b);
     else if (ft_strcmp(operation, "rrr"))
-        printf("rrr OK\n");
+    {
+        reverse_rotate_stack(a);
+        reverse_rotate_stack(b);
+    }
     else
         print_error("This Instruction Does Not Exist\n");
 }

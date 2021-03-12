@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_b.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:10:59 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:11:30 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/12 16:38:24 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/12 16:50:33 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void swap_b(t_stack *b)
+void reverse_rotate_stack(t_stack *stack)
 {
-    int elem1;
-    int elem2;
+    int i;
+    int tmp[stack->top];
+    int last_item;
+    int len;
 
-    if (is_empty(b) || b->top == 1)
-        return;
-    elem1 = pop(b);
-    elem2 = pop(b);
-    push(b, elem1);
-    push(b, elem2);
+    len = stack->top;
+    i = -1;
+    while (stack->top > 0)
+        tmp[++i] = pop(stack);
+    last_item = pop(stack);
+    while (--len >= 0)
+        push(stack, tmp[len]);
+    push(stack, last_item);
 }
