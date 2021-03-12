@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 17:25:47 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/12 19:30:20 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@ void free_stack(t_stack *stack)
 {
     free(stack->items);
     free(stack);
+}
+
+int is_sorted(t_stack *a, t_stack *b)
+{
+    int i;
+
+    i = -1;
+    if (!is_empty(b))
+        return (0);
+    while (++i <= a->top)
+    {
+        if (a->items[i] < a->items[i + 1])
+            return (0);
+    }
+    return (1);
 }
 
 int main(int len, char **args)
@@ -51,8 +66,12 @@ int main(int len, char **args)
         printf("%d ", b->items[i]);
     printf("\n\n");
 
+
+    if (is_sorted(a, b))
+        write(1, "OK\n", 3);
+    else
+        write(1, "KO\n", 3);
     // free_stack(a);
     // free_stack(b);
-    
     return (0);
 }
