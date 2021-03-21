@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 21:27:41 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/21 15:23:11 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int len, char **args)
     t_stack    *a;
     t_stack    *b;
 
-    char instructions[1024];
+    char *operation;
     int i;
     
     if (len == 1)
@@ -47,12 +47,14 @@ int main(int len, char **args)
     b = newStack(len);
     a = newStack(len);
     i = len;
+    
     while (--i >= 0)
         push(a, ft_atoi(args[i+1]));
     if (duplicates_check(a->items, len))
         print_error("There Are Duplicates\n");
-    read(0, instructions, 1024);
-    handle_operations(instructions, a, b);
+
+    while (get_operation(&operation) > 0)
+		applicate_the_operation(operation, a, b);
 
     /// print stacks ///////
     i = - 1;
@@ -65,7 +67,7 @@ int main(int len, char **args)
     while (++i <= b->top)
         printf("%d ", b->items[i]);
     printf("\n\n");
-    /// end print stacks ///////
+    // /// end print stacks ///////
 
     if (is_sorted(a, b))
         write(1, "OK\n", 3);

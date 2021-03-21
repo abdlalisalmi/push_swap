@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 17:12:55 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/21 15:17:37 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ int	ft_atoi(const char *str);
 int ft_strlen(char *str);
 int ft_strcmp(char *str1, char *str2);
 void	*ft_memset(void *str, int c, size_t n);
+char	*ft_strjoin(char *s, char c);
 
 void    print_error(char *error);
 int     duplicates_check(int *array, int len);
 void    handle_operations(char *inst, t_stack *a, t_stack *b);
 void    applicate_the_operation(char *operation, t_stack *a, t_stack *b);
+
+int			get_operation(char **operation);
 
 t_stack* newStack(int size);
 int is_empty(t_stack *stack);

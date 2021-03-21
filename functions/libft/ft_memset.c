@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/21 15:22:29 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/11 12:18:06 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/21 15:15:38 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../../includes/push_swap.h"
 
-int main(int len, char **args)
+void	*ft_memset(void *str, int c, size_t n)
 {
-    write(1, "sa\n", 3);
-    // write(1, "pb\n", 3);
-    // write(1, "rr\n", 3);
-    // write(1, "rrr\n", 4);
-    // write(1, "sa\n", 3);
-    // write(1, "sb\n", 3);
-    return (0);
+	char			*pstr;
+	unsigned int	i;
+
+	pstr = str;
+	i = 0;
+	while (i < n)
+	{
+		pstr[i] = c;
+		i++;
+	}
+	return (pstr);
 }

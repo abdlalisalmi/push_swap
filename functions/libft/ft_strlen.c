@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/21 15:22:29 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/07 22:38:00 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/21 15:15:48 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../../includes/push_swap.h"
 
-int main(int len, char **args)
+int ft_strlen(char *str)
 {
-    write(1, "sa\n", 3);
-    // write(1, "pb\n", 3);
-    // write(1, "rr\n", 3);
-    // write(1, "rrr\n", 4);
-    // write(1, "sa\n", 3);
-    // write(1, "sb\n", 3);
-    return (0);
+    int i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
 }

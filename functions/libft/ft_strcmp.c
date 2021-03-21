@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 22:38:00 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/07 22:39:26 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/10 15:13:07 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/21 15:15:43 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int ft_strlen(char *str)
+int ft_strcmp(char *str1, char *str2)
 {
     int i;
 
     i = 0;
-    while (str[i])
+    while(str1[i] == str2[i])
+    {
+        if(str1[i]=='\0'||str2[i]=='\0')
+            break;
         i++;
-    return (i);
+    }
+    if(str1[i]=='\0' && str2[i]=='\0')
+        return (1);
+    return (0);
 }

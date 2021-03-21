@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_operation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:18:06 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:18:23 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/21 15:04:04 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/21 15:16:28 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+int			get_operation(char **operation)
 {
-	char			*pstr;
-	unsigned int	i;
+	char	*buffer;
+	int		ret;
 
-	pstr = str;
-	i = 0;
-	while (i < n)
+	buffer = (char *)malloc(2);
+	if (!operation || !(*operation = (char *)malloc(1)) || !buffer)
+		return (-1);
+	*operation[0] = '\0';
+	while ((ret = read(0, buffer, 1)) > 0)
 	{
-		pstr[i] = c;
-		i++;
+		if (buffer[0] == '\n')
+			break ;
+		*operation = ft_strjoin(*operation, buffer[0]);
 	}
-	return (pstr);
+	free(buffer);
+	return (ret);
 }

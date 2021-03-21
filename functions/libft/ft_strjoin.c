@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 15:13:07 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/10 15:16:22 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/03/21 15:16:17 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/03/21 15:17:00 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int ft_strcmp(char *str1, char *str2)
+char	*ft_strjoin(char *s, char c)
 {
-    int i;
+	int		i;
+	char	*str;
 
-    i = 0;
-    while(str1[i] == str2[i])
-    {
-        if(str1[i]=='\0'||str2[i]=='\0')
-            break;
-        i++;
-    }
-    if(str1[i]=='\0' && str2[i]=='\0')
-        return (1);
-    return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	if (!(str = (char *)malloc(i + 2)))
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = c;
+	str[i + 1] = '\0';
+	free(s);
+	return (str);
 }

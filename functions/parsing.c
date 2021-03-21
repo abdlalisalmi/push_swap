@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 21:43:02 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/03/21 15:29:57 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,24 +78,4 @@ void applicate_the_operation(char *operation, t_stack *a, t_stack *b)
     }
     else
         print_error("This Instruction Does Not Exist\n");
-}
-
-void handle_operations(char *inst, t_stack *a, t_stack *b)
-{
-    int i;
-    int j;
-    char operation[4];
-
-    i = -1;
-    j = -1;
-    while (inst[++i])
-    {
-        operation[++j] = inst[i];
-        if (inst[i] == '\n')
-        {
-            operation[j] = '\0';
-            applicate_the_operation(operation, a, b);
-            j = -1;
-        }
-    }
 }
