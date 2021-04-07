@@ -6,9 +6,10 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/21 15:17:37 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/07 18:55:53 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -49,5 +50,7 @@ void swap_stack(t_stack *stack);
 void push_stack(t_stack *stack1, t_stack *stack2);
 void rotate_stack(t_stack *stack);
 void reverse_rotate_stack(t_stack *stack);
+
+int find_median(int *array, int len);
 
 #endif

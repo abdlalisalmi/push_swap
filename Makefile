@@ -6,9 +6,10 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/03/21 15:30:57 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/04/07 18:55:27 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = push_swap.a
 CC = gcc
@@ -26,11 +27,13 @@ SRCS = 	includes/push_swap.h \
 		functions/operations/push_stack.c\
 		functions/operations/rotate_stack.c\
 		functions/operations/reverse_rotate_stack.c\
+		functions/ps_functions/find_median.c\
 
 $(NAME) : 	$(SRSC)
 			@ $(CC) $(FLAGS) -c $(SRCS)
 			@ ar rc $(NAME) *.o
 			@ $(CC) $(FLAGS) checker.c $(NAME) -o checker
+			@ $(CC) $(FLAGS) push_swap.c $(NAME) -o push_swap
 
 all: 	$(NAME)
 
@@ -43,9 +46,13 @@ fclean: clean
 re: fclean $(NAME)
 
 
-test:	re
+check:	re
 	@ rm -rf *.o
 	@ rm -rf $(NAME) includes/push_swap.h.gch
-	./a.out | ./checker 2 1
-#./checker 2 1
-# echo "sa\npb\npb\npb\nra\nrb\nrrr\nsa\npa\npa\npa" | ./checker 2 1 3 6 5 8
+	echo "sa\npb\npb\npb\nra\nrb\nrrr\nsa\npa\npa\npa" | ./checker 2 1 3 6 5 8
+
+
+push:	re
+	@ rm -rf *.o
+	@ rm -rf $(NAME) includes/push_swap.h.gch
+	./push_swap 1 2 3 4 5 6 7 8 9
