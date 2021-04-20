@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/07 18:56:06 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:20:18 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ void quicksort(t_stack *a, t_stack *b, int median)
     //     return
     // choose a median //it's up to you to determine the best way to do this
     i = -1;
-    printf("--%d\n", b->top);
     while(++i <= a->top)
     {
-        printf("top: %d\n", a->top);
         //filter all values above the median into list 2
         if (a->items[a->top] > median)
         {
@@ -40,38 +38,39 @@ void quicksort(t_stack *a, t_stack *b, int median)
 
 int main(int len, char **args)
 {
-    t_stack    *a;
-    t_stack    *b;
+    (void)args;
+    t_stack    a;
+    t_stack    b;
     int i;
     
     if (len == 1)
         return (1);
     len = len - 1;
-    b = newStack(len);
-    a = newStack(len);
+    newStack(&a, len);
+    newStack(&b, len);
     i = len;
     while (--i >= 0)
-        push(a, ft_atoi(args[i+1]));
-    if (duplicates_check(a->items, len))
+        push(&a, ft_atoi(args[i+1]));
+    if (duplicates_check(a.items, len))
         print_error("There Are Duplicates\n");
     
-    int median = find_median(a->items, a->top);
+    int median = find_median(a.items, a.top);
     printf("%d\n", median);
 
-    // quicksort(a, b, median);
+    quicksort(&a, &b, median);
 
 
 
     /// print stacks ///////
     i = - 1;
     printf("\na | ");
-    while (++i <= a->top)
-        printf("%d ", a->items[i]);
+    while (++i <= a.top)
+        printf("%d ", a.items[i]);
     printf("\n");
     printf("b | ");
     i = - 1;
-    while (++i <= b->top)
-        printf("%d ", b->items[i]);
+    while (++i <= b.top)
+        printf("%d ", b.items[i]);
     printf("\n\n");
 
     return (0);

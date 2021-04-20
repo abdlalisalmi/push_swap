@@ -6,18 +6,16 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:39:03 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 17:12:36 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:04:41 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *newStack(int size)
+t_stack *newStack(t_stack *stack, int size)
 {
-    t_stack *stack;
     int i;
 
-    stack = (t_stack *)malloc(sizeof(t_stack));
     stack->size = size;
     stack->top = -1;
     stack->items = malloc(size);

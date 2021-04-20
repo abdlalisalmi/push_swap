@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/07 18:55:53 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:05:20 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    applicate_the_operation(char *operation, t_stack *a, t_stack *b);
 
 int			get_operation(char **operation);
 
-t_stack* newStack(int size);
+t_stack* newStack(t_stack *stack, int size);
 int is_empty(t_stack *stack);
 int is_full(t_stack *stack);
 void push(t_stack *stack, int item);
