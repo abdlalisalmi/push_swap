@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/20 16:05:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:23:52 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ void rotate_stack(t_stack *stack);
 void reverse_rotate_stack(t_stack *stack);
 
 int find_median(int *array, int len);
+int *sort_array(int *array, int len);
 
 #endif

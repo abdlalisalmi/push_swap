@@ -6,33 +6,11 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 12:27:36 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/25 22:13:06 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/26 13:56:50 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void sort_array(int *array, int len)
-{
-    int i;
-    int j=0;
-    int temp;
-
-    i = -1;
-    while (++i < len)
-    {
-        j = -1;
-        while (++j < len - 1)
-        {
-            if(array[j] > array[j+1])
-            {
-                temp        = array[j];
-                array[j]    = array[j+1];
-                array[j+1]  = temp;
-            }
-        }
-    }
-}
 
 int find_median(int *array, int len)
 {

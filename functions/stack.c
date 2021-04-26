@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:39:03 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/20 16:04:41 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/26 16:11:07 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack *newStack(t_stack *stack, int size)
 
     stack->size = size;
     stack->top = -1;
-    stack->items = malloc(size);
+    stack->items = malloc(sizeof(int) * size);
     i = -1;
     while (++i < size)
         stack->items[i] = '\0';
