@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/26 14:23:52 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/28 15:05:10 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,33 @@ typedef struct  s_stack
 
 
 
-int	ft_atoi(const char *str);
-int ft_strlen(char *str);
-int ft_strcmp(char *str1, char *str2);
-void	*ft_memset(void *str, int c, size_t n);
-char	*ft_strjoin(char *s, char c);
+int	        ft_atoi(const char *str);
+int         ft_strlen(char *str);
+int         ft_strcmp(char *str1, char *str2);
+void	    *ft_memset(void *str, int c, size_t n);
+char	    *ft_strjoin(char *s, char c);
 
-void    print_error(char *error);
-int     duplicates_check(int *array, int len);
-void    handle_operations(char *inst, t_stack *a, t_stack *b);
-void    applicate_the_operation(char *operation, t_stack *a, t_stack *b);
+void        print_error(char *error);
+int         is_sorted(t_stack *a, t_stack *b);
+int         duplicates_check(int *array, int len);
+void        handle_operations(char *inst, t_stack *a, t_stack *b);
+void        applicate_the_operation(char *operation, t_stack *a, t_stack *b);
 
 int			get_operation(char **operation);
 
-t_stack* newStack(t_stack *stack, int size);
-int is_empty(t_stack *stack);
-int is_full(t_stack *stack);
-void push(t_stack *stack, int item);
-int pop(t_stack *stack);
+t_stack*    newStack(t_stack *stack, int size);
+int         is_empty(t_stack *stack);
+int         is_full(t_stack *stack);
+void        push(t_stack *stack, int item);
+int         pop(t_stack *stack);
 
-void swap_stack(t_stack *stack);
-void push_stack(t_stack *stack1, t_stack *stack2);
-void rotate_stack(t_stack *stack);
-void reverse_rotate_stack(t_stack *stack);
+void        swap_stack(t_stack *stack);
+void        push_stack(t_stack *stack1, t_stack *stack2);
+void        rotate_stack(t_stack *stack);
+void        reverse_rotate_stack(t_stack *stack);
 
-int find_median(int *array, int len);
-int *sort_array(int *array, int len);
+int         find_median(int *array, int len);
+int         *sort_array(int *array, int len);
+void        three_numbers(t_stack *a);
 
 #endif

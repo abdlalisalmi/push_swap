@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_operation.c                                    :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 15:04:04 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/28 13:36:35 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/04/28 11:52:17 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/04/28 11:54:46 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int			get_operation(char **operation)
+int is_sorted(t_stack *a, t_stack *b)
 {
-	char	*buffer;
-	int		ret;
+    int i;
 
-	buffer = (char *)malloc(2);
-	if (!operation || !(*operation = (char *)malloc(1)) || !buffer)
-		return (-1);
-	*operation[0] = '\0';
-	while ((ret = read(0, buffer, 1)))
-	{
-		if (buffer[0] == '\n' || ret == EOF)
-			break;
-		*operation = ft_strjoin(*operation, buffer[0]);
-	}
-	free(buffer);
-	return (ret);
+    if (!is_empty(b))
+        return (0);
+    i = -1;
+    while (++i <= a->top - 1)
+    {
+        if (a->items[i] < a->items[i + 1])
+            return (0);
+    }
+    return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:19:17 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/12 16:50:28 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/28 12:39:02 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 void rotate_stack(t_stack *stack)
 {
     int i;
-    int tmp[stack->top];
+    int tmp[stack->size];
     int top_item;
     int len;
 
+    if (is_empty(stack) || stack->top == 0)
+        return;
     len = stack->top;
     top_item = pop(stack);
     i = -1;
