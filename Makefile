@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/04/28 15:06:47 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/04/30 17:26:54 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ check:	re
 push:	re
 	@ rm -rf *.o
 	@ rm -rf $(NAME) includes/push_swap.h.gch
-	./push_swap 2 1 3
+	./push_swap 4 1 3 5 2
 
 
 ps: re

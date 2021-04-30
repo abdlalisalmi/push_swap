@@ -6,55 +6,55 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/28 15:15:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/30 17:34:51 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "includes/push_swap.h"
 
-void my_quicksort(t_stack *a, t_stack *b, int len)
-{
-    int top_half_len = 0;
-    int i;
-    int median;
+// void my_quicksort(t_stack *a, t_stack *b, int len)
+// {
+//     int top_half_len = 0;
+//     int i;
+//     int median;
     
-    if (len == 1)
-        return;
-    median = find_median(a->items, len + 1);
-    // printf("%d\n", median);
+//     if (len == 1)
+//         return;
+//     median = find_median(a->items, len + 1);
+//     // printf("%d\n", median);
     
-    i = -1;
-    while(++i <= len)
-    {
-        if (a->items[a->top] > median)
-        {
-            push_stack(b, a);
-            // write(1, "pb\n", 3);
-            top_half_len++;
-        }
-        reverse_rotate_stack(a);
-        // write(1, "rra\n", 3);
-    }
+//     i = -1;
+//     while(++i <= len)
+//     {
+//         if (a->items[a->top] > median)
+//         {
+//             push_stack(b, a);
+//             // write(1, "pb\n", 3);
+//             top_half_len++;
+//         }
+//         reverse_rotate_stack(a);
+//         // write(1, "rra\n", 3);
+//     }
     
-    //reverse the list back to original position
-    i = -1;
-    while(++i <= (len - top_half_len))
-    {
-        reverse_rotate_stack(a);
-        // write(1, "rra\n", 3);
-    }
-    //push larger half onto smaller half
-    i = -1;
-    while(++i <= top_half_len)
-    {
-        push_stack(a, b);
-        // write(1, "pa\n", 3);
-    }
+//     //reverse the list back to original position
+//     i = -1;
+//     while(++i <= (len - top_half_len))
+//     {
+//         reverse_rotate_stack(a);
+//         // write(1, "rra\n", 3);
+//     }
+//     //push larger half onto smaller half
+//     i = -1;
+//     while(++i <= top_half_len)
+//     {
+//         push_stack(a, b);
+//         // write(1, "pa\n", 3);
+//     }
     
-    my_quicksort(a, b, top_half_len);
+//     my_quicksort(a, b, top_half_len);
     
-}
+// }
 
 int get_index(int *array, int el, int len)
 {
@@ -94,7 +94,7 @@ int main(int len, char **args)
     else if (len <= 3)
         three_numbers(&a);
     else if (len <= 5)
-        printf("5 number\n");
+        five_numbers(&a, &b);
     else if (len <= 100)
         printf("100 number\n");
     else if (len <= 500)

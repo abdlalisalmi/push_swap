@@ -6,13 +6,13 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:19:17 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/28 12:39:02 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/30 17:22:23 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void rotate_stack(t_stack *stack)
+void rotate_stack(t_stack *stack, char *print)
 {
     int i;
     int tmp[stack->size];
@@ -29,4 +29,6 @@ void rotate_stack(t_stack *stack)
     push(stack, top_item);
     while (--len >= 0)
         push(stack, tmp[len]);
+    if (print)
+        write(1,print, ft_strlen(print));
 }

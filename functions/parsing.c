@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/28 12:51:19 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/04/30 17:23:47 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,36 +45,36 @@ int     duplicates_check(int *array, int len)
 void applicate_the_operation(char *operation, t_stack *a, t_stack *b)
 {
     if (ft_strcmp(operation, "sa"))
-        swap_stack(a);
+        swap_stack(a, NULL);
     else if (ft_strcmp(operation, "sb"))
-        swap_stack(b);
+        swap_stack(b, NULL);
     else if (ft_strcmp(operation, "ss"))
     {
-        swap_stack(a);
-        swap_stack(b);
+        swap_stack(a, NULL);
+        swap_stack(b, NULL);
     }
     else if (ft_strcmp(operation, "pa"))
-        push_stack(a, b);
+        push_stack(a, b, NULL);
     else if (ft_strcmp(operation, "pb"))
-        push_stack(b, a);
+        push_stack(b, a, NULL);
     else if (ft_strcmp(operation, "ra"))
-        rotate_stack(a);
+        rotate_stack(a, NULL);
     else if (ft_strcmp(operation, "rb"))
-        rotate_stack(b);
+        rotate_stack(b, NULL);
         
     else if (ft_strcmp(operation, "rr"))
     {
-        rotate_stack(a);
-        rotate_stack(b);
+        rotate_stack(a, NULL);
+        rotate_stack(b, NULL);
     }
     else if (ft_strcmp(operation, "rra"))
-        reverse_rotate_stack(a);
+        reverse_rotate_stack(a, NULL);
     else if (ft_strcmp(operation, "rrb"))
-        reverse_rotate_stack(b);
+        reverse_rotate_stack(b, NULL);
     else if (ft_strcmp(operation, "rrr"))
     {
-        reverse_rotate_stack(a);
-        reverse_rotate_stack(b);
+        reverse_rotate_stack(a, NULL);
+        reverse_rotate_stack(b, NULL);
     }
     else
         print_error("This Instruction Does Not Exist\n");
