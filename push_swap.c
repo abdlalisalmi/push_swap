@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/30 17:34:51 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/01 17:24:01 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int main(int len, char **args)
     else if (len <= 5)
         five_numbers(&a, &b);
     else if (len <= 100)
-        printf("100 number\n");
+        one_hundred_numbers(&a, &b);
     else if (len <= 500)
         printf("500 number\n");
     

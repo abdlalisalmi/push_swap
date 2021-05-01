@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/04/30 17:26:54 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/05/01 17:12:23 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS = 	includes/push_swap.h \
 		functions/operations/reverse_rotate_stack.c\
 		functions/ps_functions/find_median.c\
 		functions/ps_functions/sort_array.c\
-		functions/ps_functions/algorithme.c
+		functions/ps_functions/algorithme_3_5.c\
+		functions/ps_functions/algorithme_100.c
 
 $(NAME) : 	$(SRSC)
 			@ $(CC) $(FLAGS) -c $(SRCS)
@@ -59,8 +60,7 @@ check:	re
 push:	re
 	@ rm -rf *.o
 	@ rm -rf $(NAME) includes/push_swap.h.gch
-	./push_swap 4 1 3 5 2
-
+	./push_swap 30 20 95 53 62 36 29 34 77 52 94 8 22 18 15 44 82 7 40 73 23 47 58 87 49 81 25 69 83 56 9 14 75 33 92 5 70 68 38 43 99 28 48 41 51 60 11 13 4 80 89 98 55 12 21 79 100 97 66 76 26 91 65 54 93 42 27 16 32 35 39 78 96 24 63 85 10 46 84 88 19 50 3 72 57 1 86 74 37 45 2 61 31 6 59 71 67 17 64 90
 
 ps: re
 	@ rm -rf *.o

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithme.c                                       :+:      :+:    :+:   */
+/*   algorithme_3_5.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 14:48:18 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/30 17:35:43 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/01 16:08:55 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,14 @@ void three_numbers(t_stack *a)
     int smaller;
 
     if (a->top == 1)
-        write(1, "sa\n", 3);
+        swap_stack(a, "sa\n");
     else
     {
         sorted = sort_array(a->items, a->top);
         smaller = sorted[0];
         bigger = sorted[2];
         if (a->items[0] == bigger && a->items[1] == smaller)
-        {
             swap_stack(a, "sa\n");
-            // write(1, "sa\n", 3);
-        }
         else if (a->items[2] == bigger && a->items[1] == smaller)
             write(1, "ra\n", 3);
         else if (a->items[2] == bigger && a->items[0] == smaller)
@@ -38,11 +35,9 @@ void three_numbers(t_stack *a)
         {
             swap_stack(a, "sa\n");
             rotate_stack(a, "ra\n");
-            // write(1, "sa\nra\n", 6);
         }
         else if (a->items[1] == bigger && a->items[0] == smaller)
             reverse_rotate_stack(a, "rra\n");
-            // write(1, "rra\n", 4);
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/30 17:23:19 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/01 16:10:41 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int         *sort_array(int *array, int len);
 
 void        three_numbers(t_stack *a);
 void        five_numbers(t_stack *a, t_stack *b);
+void        one_hundred_numbers(t_stack *a, t_stack *b);
 
 #endif
