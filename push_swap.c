@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/02 17:10:21 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/03 16:31:24 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,23 +96,23 @@ int main(int len, char **args)
     else if (len <= 5)
         five_numbers(&a, &b);
     else if (len <= 100)
-        one_hundred_numbers(&a, &b);
+        one_to_five_hundred_numbers(&a, &b, 100, 20);
     else if (len <= 500)
-        printf("500 number\n");
+        one_to_five_hundred_numbers(&a, &b, 500, 40);
     
     
 
     /// print stacks ///////
-    i = - 1;
-    printf("\na | ");
-    while (++i <= a.top)
-        printf("%d ", a.items[i]);
-    printf("\n");
-    printf("b | ");
-    i = - 1;
-    while (++i <= b.top)
-        printf("%d ", b.items[i]);
-    printf("\n\n");
+    // i = - 1;
+    // printf("\na | ");
+    // while (++i <= a.top)
+    //     printf("%d ", a.items[i]);
+    // printf("\n");
+    // printf("b | ");
+    // i = - 1;
+    // while (++i <= b.top)
+    //     printf("%d ", b.items[i]);
+    // printf("\n\n");
     // /// end print stacks ///////
 
     return (0);

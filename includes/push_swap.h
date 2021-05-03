@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/01 16:10:41 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/03 16:20:09 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,10 @@ void        reverse_rotate_stack(t_stack *stack, char *print);
 
 int         find_median(int *array, int len);
 int         *sort_array(int *array, int len);
+int         get_element_index(t_stack *stack, int el);
 
 void        three_numbers(t_stack *a);
 void        five_numbers(t_stack *a, t_stack *b);
-void        one_hundred_numbers(t_stack *a, t_stack *b);
+void        one_to_five_hundred_numbers(t_stack *a, t_stack *b, int max, int step);
 
 #endif
