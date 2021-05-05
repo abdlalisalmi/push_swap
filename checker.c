@@ -6,26 +6,19 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/28 15:33:19 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/05 14:47:23 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void free_stack(t_stack *stack)
-{
-    free(stack->items);
-    free(stack);
-}
-
 int main(int len, char **args)
 {
-    t_stack    a;
-    t_stack    b;
+    t_stack a;
+    t_stack b;
 
-    char *operation;
-    (void)args;
-    int i;
+    char    *operation;
+    int     i;
     
     if (len < 2)
         return (1);
@@ -38,11 +31,15 @@ int main(int len, char **args)
         
     if (duplicates_check(a.items, len))
         print_error("There Are Duplicates\n");
+    
+    if (a.size == 1)
+        return (0);
 
     operation = NULL;
     while (get_operation(&operation) > 0)
 		applicate_the_operation(operation, &a, &b);
-
+    if (operation[0] != '\0')
+        applicate_the_operation(operation, &a, &b);
 
 
     /// print stacks ///////
@@ -62,7 +59,5 @@ int main(int len, char **args)
         write(1, "OK\n", 3);
     else
         write(1, "KO\n", 3);
-    // free_stack(a);
-    // free_stack(b);
     return (0);
 }

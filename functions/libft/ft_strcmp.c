@@ -6,24 +6,24 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:13:07 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/03/21 15:15:43 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/05 13:47:58 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *str1, char *str2)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str1[i] == str2[i])
-    {
-        if(str1[i]=='\0'||str2[i]=='\0')
-            break;
-        i++;
-    }
-    if(str1[i]=='\0' && str2[i]=='\0')
-        return (1);
-    return (0);
+	i = 0;
+	while (str1[i] == str2[i])
+	{
+		if (str1[i] == '\0' || str2[i] == '\0')
+			break ;
+		i++;
+	}
+	if (str1[i] == '\0' && str2[i] == '\0')
+		return (1);
+	return (0);
 }

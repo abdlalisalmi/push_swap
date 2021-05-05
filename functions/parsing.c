@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:35:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/04/30 17:23:47 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/05 14:40:43 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ void applicate_the_operation(char *operation, t_stack *a, t_stack *b)
     }
     else
         print_error("This Instruction Does Not Exist\n");
+    free(operation);
 }
