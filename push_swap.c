@@ -6,71 +6,12 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/03 16:31:24 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/05 13:28:26 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "includes/push_swap.h"
-
-// void my_quicksort(t_stack *a, t_stack *b, int len)
-// {
-//     int top_half_len = 0;
-//     int i;
-//     int median;
-    
-//     if (len == 1)
-//         return;
-//     median = find_median(a->items, len + 1);
-//     // printf("%d\n", median);
-    
-//     i = -1;
-//     while(++i <= len)
-//     {
-//         if (a->items[a->top] > median)
-//         {
-//             push_stack(b, a);
-//             // write(1, "pb\n", 3);
-//             top_half_len++;
-//         }
-//         reverse_rotate_stack(a);
-//         // write(1, "rra\n", 3);
-//     }
-    
-//     //reverse the list back to original position
-//     i = -1;
-//     while(++i <= (len - top_half_len))
-//     {
-//         reverse_rotate_stack(a);
-//         // write(1, "rra\n", 3);
-//     }
-//     //push larger half onto smaller half
-//     i = -1;
-//     while(++i <= top_half_len)
-//     {
-//         push_stack(a, b);
-//         // write(1, "pa\n", 3);
-//     }
-    
-//     my_quicksort(a, b, top_half_len);
-    
-// }
-
-int get_index(int *array, int el, int len)
-{
-    int i;
-    int index;
-
-    index = 0;
-    i = 0;
-    while (i <= len)
-    {
-        if (array[i] == el)
-            index = i;
-        i++;
-    }
-    return (index);
-}
 
 int main(int len, char **args)
 {
@@ -88,7 +29,6 @@ int main(int len, char **args)
         push(&a, ft_atoi(args[i+1]));
     if (duplicates_check(a.items, len))
         print_error("There Are Duplicates\n");
-
     if (is_sorted(&a, &b))
         return(0);
     else if (len <= 3)
@@ -99,21 +39,5 @@ int main(int len, char **args)
         one_to_five_hundred_numbers(&a, &b, 100, 20);
     else if (len <= 500)
         one_to_five_hundred_numbers(&a, &b, 500, 40);
-    
-    
-
-    /// print stacks ///////
-    // i = - 1;
-    // printf("\na | ");
-    // while (++i <= a.top)
-    //     printf("%d ", a.items[i]);
-    // printf("\n");
-    // printf("b | ");
-    // i = - 1;
-    // while (++i <= b.top)
-    //     printf("%d ", b.items[i]);
-    // printf("\n\n");
-    // /// end print stacks ///////
-
     return (0);
 }

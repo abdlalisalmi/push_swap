@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/05/03 16:19:21 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/05/04 14:59:03 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,10 @@ $(NAME) : 	$(SRSC)
 all: 	$(NAME)
 
 clean:
-		@ rm -rf *.o
+		@ rm -rf *.o includes/push_swap.h.gch
 
 fclean: clean
-		@ rm -rf $(NAME) checker includes/push_swap.h.gch
+		@ rm -rf $(NAME) checker push_swap includes/push_swap.h.gch
 
 re: fclean $(NAME)
 

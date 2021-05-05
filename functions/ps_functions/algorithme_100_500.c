@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:09:27 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/03 16:20:12 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/04 14:39:30 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 int scan_stack_from_top(t_stack *stack, int start, int end)
 {
-    int top_index = stack->top;
+    int top_index;
 
-    while (top_index > -1)
-    {
+    top_index = stack->top;
+    while (top_index-- > -1)
         if (stack->items[top_index] >= start && stack->items[top_index] <= end)
-        {
             return (top_index);
-            break;
-        }
-        top_index--;
-    }
     return (-1);
 }
 
@@ -34,28 +29,19 @@ int scan_stack_from_bottom(t_stack *stack, int start, int end)
 
     i = -1;
     while (++i <= stack->top)
-    {
         if (stack->items[i] >= start && stack->items[i] <= end)
-        {
             return (i);
-            break;
-        }
-    }
     return (-1);
 }
 
 void choose_right_operation(t_stack *stack, int top_index, int bottom_index)
 {
     if ((stack->top - top_index) < bottom_index)
-        {
-            while (++top_index <= stack->top)
-                rotate_stack(stack, "ra\n");
-            
-        } else {
-            bottom_index++;
-            while (--bottom_index >= 0)
-                reverse_rotate_stack(stack, "rra\n");
-        }
+        while (++top_index <= stack->top)
+            rotate_stack(stack, "ra\n"); 
+    else
+        while (bottom_index-- >= 0)
+            reverse_rotate_stack(stack, "rra\n");
 }
 
 void chunk(t_stack *a, t_stack *b, int start, int end)
@@ -64,9 +50,8 @@ void chunk(t_stack *a, t_stack *b, int start, int end)
     int hold_bottom_index;
     int find;
 
-    hold_top_index = 0;
-    hold_bottom_index = 0;
-    while (1)
+    find = 1;
+    while (find)
     {
         find = 0;
         if ((hold_top_index = scan_stack_from_top(a, start, end)) > -1)
@@ -76,8 +61,6 @@ void chunk(t_stack *a, t_stack *b, int start, int end)
         choose_right_operation(a, hold_top_index, hold_bottom_index);
         if (find)
             push_stack(b, a, "pb\n");
-        else
-            break;
     }
 }
 
@@ -99,15 +82,12 @@ void one_to_five_hundred_numbers(t_stack *a, t_stack *b, int max, int step)
     {
         bigger_index = get_element_index(b, sorted[b->top]);
         if (bigger_index < (int)(b->top / 2))
-        {
             while (bigger_index-- >= 0)
                 reverse_rotate_stack(b, "rrb\n");
-        }
         else
-        {
             while (bigger_index++ < b->top)
                 rotate_stack(b, "rb\n");
-        }
         push_stack(a, b, "pa\n");
     }
+    free(sorted);
 }
