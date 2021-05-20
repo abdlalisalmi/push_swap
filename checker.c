@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:46:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/06 14:23:45 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/20 18:06:34 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 ** print stucks values
 */
-void	print_stucks(t_stack *a, t_stack *b)
+void	print_stacks(t_stack *a, t_stack *b)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ void	print_stucks(t_stack *a, t_stack *b)
 	printf("\n\n");
 }
 
-void	check_stucks(t_stack *a, t_stack *b)
+void	check_stacks(t_stack *a, t_stack *b)
 {
 	if (is_sorted(a, b))
 		write(1, "OK\n", 3);
@@ -62,7 +62,7 @@ int	main(int len, char **args)
 		applicate_the_operation(operation, &a, &b);
 	if (operation[0] != '\0')
 		applicate_the_operation(operation, &a, &b);
-	print_stucks(&a, &b);
-	check_stucks(&a, &b);
+	print_stacks(&a, &b);
+	check_stacks(&a, &b);
 	return (0);
 }
