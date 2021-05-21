@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 21:49:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/06 14:01:59 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/21 12:15:05 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,17 @@ int			find_median(int *array, int len);
 int			*sort_array(int *array, int len);
 int			get_element_index(t_stack *stack, int el);
 
+int			scan_stack_from_top(t_stack *stack, int start, int end);
+int			scan_stack_from_bottom(t_stack *stack, int start, int end);
+void		choose_right_operation(t_stack *stack, int top_index,
+				int bottom_index);
+void		chunk(t_stack *a, t_stack *b, int start, int end);
+void		split_chunks(t_stack *a, t_stack *b, int max, int step);
+
 void		three_numbers(t_stack *a);
 void		five_numbers(t_stack *a, t_stack *b);
-void		one_to_five_hundred_numbers(t_stack *a, t_stack *b,
+void		five_hundred_numbers(t_stack *a, t_stack *b,
 				int max, int step);
+void		one_hundred_numbers(t_stack *a, t_stack *b, int max, int step);
 
 #endif

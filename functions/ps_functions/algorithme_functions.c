@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithme_100_500.c                               :+:      :+:    :+:   */
+/*   algorithme_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/01 16:09:27 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/20 18:27:43 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/05/21 12:01:39 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/05/21 12:14:27 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,30 +66,28 @@ void	chunk(t_stack *a, t_stack *b, int start, int end)
 	}
 }
 
-void	one_to_five_hundred_numbers(t_stack *a, t_stack *b, int max, int step)
+void	split_chunks(t_stack *a, t_stack *b, int max, int step)
 {
 	int	start;
-	int	bigger_index;
+	int	end;
 	int	*sorted;
 
 	start = 0;
+	end = step - 1;
+	sorted = sort_array(a->items, a->size);
 	while (start < max)
 	{
-		chunk(a, b, start, start + (step - 1));
-		start += step;
-	}
-	sorted = sort_array(b->items, b->top);
-	bigger_index = 0;
-	while (b->top > -1)
-	{
-		bigger_index = get_element_index(b, sorted[b->top]);
-		if (bigger_index < (int)(b->top / 2))
-			while (bigger_index-- >= 0)
-				reverse_rotate_stack(b, "rrb\n");
+		chunk(a, b, sorted[start], sorted[end]);
+		if (end + step - 1 > max)
+		{
+			start += step;
+			end = max - 1;
+		}
 		else
-			while (bigger_index++ < b->top)
-				rotate_stack(b, "rb\n");
-		push_stack(a, b, "pa\n");
+		{
+			start += step;
+			end = start + step - 1;
+		}
 	}
 	free(sorted);
 }

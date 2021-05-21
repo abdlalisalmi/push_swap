@@ -6,7 +6,7 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 15:32:22 by aes-salm          #+#    #+#              #
-#    Updated: 2021/05/20 12:18:24 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/05/21 12:03:26 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ SRCS = 	includes/push_swap.h \
 		functions/ps_functions/sort_array.c\
 		functions/ps_functions/get_element_index.c\
 		functions/ps_functions/algorithme_3_5.c\
-		functions/ps_functions/algorithme_100_500.c\
+		functions/ps_functions/algorithme_500.c\
+		functions/ps_functions/algorithme_100.c\
+		functions/ps_functions/algorithme_functions.c\
 
 $(NAME) : 	$(SRSC)
 			@ $(CC) $(FLAGS) -c $(SRCS)

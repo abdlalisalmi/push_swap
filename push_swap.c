@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/06 14:05:41 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/21 11:49:39 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	logic(t_stack *a, t_stack *b, int len)
 	else if (len <= 5)
 		five_numbers(a, b);
 	else if (len <= 100)
-		one_to_five_hundred_numbers(a, b, 100, 20);
+		one_hundred_numbers(a, b, len, 20);
 	else
-		one_to_five_hundred_numbers(a, b, len, 40);
+		five_hundred_numbers(a, b, len, 40);
 }
 
 int	main(int len, char **args)

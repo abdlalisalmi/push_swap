@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 12:27:36 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/05/06 12:57:18 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/05/21 11:39:59 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	find_median(int *array, int len)
 	int	*sorted;
 
 	sorted = sort_array(array, len);
-	if (len % 2 == 0)
-		median = (sorted[(len - 1) / 2] + sorted[len / 2]) / 2;
+	if (len == 4)
+		median = sorted[0];
 	else
-		median = sorted[len / 2];
+		median = sorted[1];
 	free(sorted);
 	return (median);
 }
